@@ -1,0 +1,1133 @@
+[
+{
+  "model": "sessions.session",
+  "pk": "2d0o066my6xdxm7rgwkmweut60s0q5vc",
+  "fields": {
+    "session_data": ".eJxVjEEOgjAQRe_StWnoUKC4dO8ZyMzvYFFDEwor492VhIVu_3vvv8zA25qGregyTNGcjTOn300YD513EO8837JFntdlErsr9qDFXnPU5-Vw_w4Sl_StqeaoEurYqyKIAyhA4Op-xOg8oe0qgsL7hjtGoOClUhGM6knaxrw_GiE5QQ:1wSbEh:apccoEPsRGCpi7AHPuVirz6T-N7RUulMhimddfc2vLk",
+    "expire_date": "2026-06-11T13:57:23.661Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "r9eu5623sx9eaf1zg607ceh0dgbea3js",
+  "fields": {
+    "session_data": ".eJxVjEEOgjAQRe_StWnoUKC4dO8ZyMzvYFFDEwor492VhIVu_3vvv8zA25qGregyTNGcjTOn300YD513EO8837JFntdlErsr9qDFXnPU5-Vw_w4Sl_StqeaoEurYqyKIAyhA4Op-xOg8oe0qgsL7hjtGoOClUhGM6knaxrw_GiE5QQ:1wd7Uk:kYWZXmYrc3M0yQKKj0Lz8E1qKBBGCCb1FzjBNsx93XE",
+    "expire_date": "2026-07-10T14:25:26.085Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wtpfdnqup9cm9uxowsul1rmwze1jxo2g",
+  "fields": {
+    "session_data": ".eJxVjEEOgjAQRe_StWnoUKC4dO8ZyMzvYFFDEwor492VhIVu_3vvv8zA25qGregyTNGcjTOn300YD513EO8837JFntdlErsr9qDFXnPU5-Vw_w4Sl_StqeaoEurYqyKIAyhA4Op-xOg8oe0qgsL7hjtGoOClUhGM6knaxrw_GiE5QQ:1wSSai:27EhRq-1NyRglsPeD7-bX7C8AzVDn8O6Cetp8g5rwgI",
+    "expire_date": "2026-06-11T04:43:32.662Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "z59fumkbfz5ihmrv3j3hjof4jv9sbddi",
+  "fields": {
+    "session_data": ".eJxVjEEOgjAQRe_StWnoUKC4dO8ZyMzvYFFDEwor492VhIVu_3vvv8zA25qGregyTNGcjTOn300YD513EO8837JFntdlErsr9qDFXnPU5-Vw_w4Sl_StqeaoEurYqyKIAyhA4Op-xOg8oe0qgsL7hjtGoOClUhGM6knaxrw_GiE5QQ:1wYcfW:Ak6qDv7BDZiOy7-kUIeZIQMrPwbIEafytafk40gscUY",
+    "expire_date": "2026-06-28T04:41:58.644Z"
+  }
+},
+{
+  "model": "booking.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$1uX88o0ibkxMbkLNLdo7h6$qmu+3RQJXxt3x1NfvarVO4LUjUKgay9zOUVgLGR/3ws=",
+    "last_login": "2026-06-26T14:25:26.078Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admincantik@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-05-28T04:42:47Z",
+    "role": "admin",
+    "nomor_hp": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "booking.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$PSmy1yqz6DQiXPqCVYxazm$hz5eBjEL5c8hM26nqiOTxKh0VH2tp/nDVmBezACHnto=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Tantri Cantip",
+    "first_name": "",
+    "last_name": "",
+    "email": "nticantip@mail",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-28T06:38:53.735Z",
+    "role": "customer",
+    "nomor_hp": "08123456789",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "booking.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$vohbuBRCxmsfQKhS8COHrN$w3InC373of4vf5iEUoUTyDTnrV3ey9bi2nqoRPJ3STM=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Baskara",
+    "first_name": "",
+    "last_name": "",
+    "email": "baskara@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-21T06:20:18.132Z",
+    "role": "customer",
+    "nomor_hp": "087736662",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "booking.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$xSWZnzwYGeno5a5nM1IboY$BmezokHS+GNpPdgmYXTUoPXCh7QYD6SvEDChDPZJCYg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "april",
+    "first_name": "",
+    "last_name": "",
+    "email": "april@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-25T06:53:01.885Z",
+    "role": "customer",
+    "nomor_hp": "08975372652424",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "booking.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$GrkHrQobap5zK2MOowUdms$tOCBBBNDJGNVfRzRAcKgx7qFvfZZo8GI702GN7z7Z3o=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Irgiluffy",
+    "first_name": "",
+    "last_name": "",
+    "email": "irgiaja@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-27T04:39:15.006Z",
+    "role": "customer",
+    "nomor_hp": "089388382",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "booking.menulayanan",
+  "pk": 1,
+  "fields": {
+    "title": "Self Photo",
+    "description": "Cocok Untuk kalian yang suka backround polos",
+    "price_self": "10000.00",
+    "price_couple": "20000.00",
+    "price_group": "30000.00",
+    "price_family": "50000.00",
+    "duration": "15",
+    "image": "layanan/LogoStudioIBu-removebg-preview.png",
+    "status": false
+  }
+},
+{
+  "model": "booking.menulayanan",
+  "pk": 2,
+  "fields": {
+    "title": "Photo Box",
+    "description": "Cocok untuk pasangan atau bareng bestiee",
+    "price_self": "15000.00",
+    "price_couple": "25000.00",
+    "price_group": "35000.00",
+    "price_family": "50000.00",
+    "duration": "15",
+    "image": "layanan/kamera.png",
+    "status": false
+  }
+},
+{
+  "model": "booking.menulayanan",
+  "pk": 3,
+  "fields": {
+    "title": "Theater Studio",
+    "description": "Ajak maksimal 5 orang bestimu untuk mengabadikan moment!",
+    "price_self": "15000.00",
+    "price_couple": "30000.00",
+    "price_group": "45000.00",
+    "price_family": "70000.00",
+    "duration": "15",
+    "image": "layanan/bajuKumite.png",
+    "status": false
+  }
+},
+{
+  "model": "booking.menulayanan",
+  "pk": 4,
+  "fields": {
+    "title": "Photo Session",
+    "description": "Family Photo Package ≡ƒæ¿ΓÇì≡ƒæ⌐ΓÇì≡ƒæºΓÇì≡ƒæªΓ£¿\r\nFoto bareng keluarga makin seru! Bisa sampai 10 orang, jadi nggak ada yang ketinggalan ≡ƒñì",
+    "price_self": "25000.00",
+    "price_couple": "50000.00",
+    "price_group": "70000.00",
+    "price_family": "120000.00",
+    "duration": "20",
+    "image": "layanan/AHMAD-SEI.png",
+    "status": false
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 32,
+  "fields": {
+    "customer": [
+      "Tantri Cantip"
+    ],
+    "nama": "TANTRI CANTIK",
+    "nomor_hp": "08776666",
+    "package_name": "Photo Session",
+    "kategori": "family",
+    "payment_method": "qris",
+    "deskripsi": "",
+    "date": "2026-06-15",
+    "time": "14:30:00",
+    "bukti_pembayaran": "bukti_pembayaran/korupsi_FUShvn5.jpeg",
+    "created_at": "2026-06-14T13:24:49.731Z",
+    "payment_status": "confirmed",
+    "booking_status": "finished",
+    "harga": "120000.00",
+    "drive_link": null
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 33,
+  "fields": {
+    "customer": [
+      "Tantri Cantip"
+    ],
+    "nama": "DR Tirta",
+    "nomor_hp": "0866552",
+    "package_name": "Photo Session",
+    "kategori": "family",
+    "payment_method": "qris",
+    "deskripsi": "",
+    "date": "2026-06-15",
+    "time": "13:30:00",
+    "bukti_pembayaran": "bukti_pembayaran/korupsi_ANGfNJX.jpeg",
+    "created_at": "2026-06-14T13:40:12.124Z",
+    "payment_status": "confirmed",
+    "booking_status": "finished",
+    "harga": "120000.00",
+    "drive_link": null
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 34,
+  "fields": {
+    "customer": [
+      "Tantri Cantip"
+    ],
+    "nama": "gia",
+    "nomor_hp": "087765444",
+    "package_name": "Photo Session",
+    "kategori": "family",
+    "payment_method": "qris",
+    "deskripsi": "",
+    "date": "2026-06-17",
+    "time": "19:00:00",
+    "bukti_pembayaran": "bukti_pembayaran/korupsi_An3IuTf.jpeg",
+    "created_at": "2026-06-16T14:59:10.128Z",
+    "payment_status": "confirmed",
+    "booking_status": "finished",
+    "harga": "120000.00",
+    "drive_link": null
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 35,
+  "fields": {
+    "customer": [
+      "Tantri Cantip"
+    ],
+    "nama": "Bernadya",
+    "nomor_hp": "82776366",
+    "package_name": "Photo Box",
+    "kategori": "couple",
+    "payment_method": "qris",
+    "deskripsi": "",
+    "date": "2026-06-17",
+    "time": "14:30:00",
+    "bukti_pembayaran": "bukti_pembayaran/korupsi_Y0jxoHt.jpeg",
+    "created_at": "2026-06-16T16:25:34.373Z",
+    "payment_status": "confirmed",
+    "booking_status": "finished",
+    "harga": "25000.00",
+    "drive_link": null
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 36,
+  "fields": {
+    "customer": [
+      "Baskara"
+    ],
+    "nama": "Babas",
+    "nomor_hp": "088774",
+    "package_name": "Theater Studio",
+    "kategori": "couple",
+    "payment_method": "qris",
+    "deskripsi": "",
+    "date": "2026-06-21",
+    "time": "16:30:00",
+    "bukti_pembayaran": "bukti_pembayaran/qr-code.png",
+    "created_at": "2026-06-21T06:22:23.555Z",
+    "payment_status": "confirmed",
+    "booking_status": "finished",
+    "harga": "30000.00",
+    "drive_link": null
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 37,
+  "fields": {
+    "customer": [
+      "Baskara"
+    ],
+    "nama": "Babas",
+    "nomor_hp": "08777466",
+    "package_name": "Photo Session",
+    "kategori": "family",
+    "payment_method": "qris",
+    "deskripsi": "",
+    "date": "2026-06-21",
+    "time": "17:30:00",
+    "bukti_pembayaran": "bukti_pembayaran/qr-code_NbahSlu.png",
+    "created_at": "2026-06-21T06:29:50.338Z",
+    "payment_status": "confirmed",
+    "booking_status": "finished",
+    "harga": "120000.00",
+    "drive_link": null
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 38,
+  "fields": {
+    "customer": [
+      "Baskara"
+    ],
+    "nama": "baskara",
+    "nomor_hp": "0985555555555",
+    "package_name": "Theater Studio",
+    "kategori": "couple",
+    "payment_method": "qris",
+    "deskripsi": "lov u",
+    "date": "2026-06-24",
+    "time": "11:30:00",
+    "bukti_pembayaran": "bukti_pembayaran/qr-code_e2A7iP2.png",
+    "created_at": "2026-06-23T05:35:49.410Z",
+    "payment_status": "confirmed",
+    "booking_status": "finished",
+    "harga": "30000.00",
+    "drive_link": null
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 39,
+  "fields": {
+    "customer": [
+      "Baskara"
+    ],
+    "nama": "babasgans",
+    "nomor_hp": "0766266666666",
+    "package_name": "Photo Box",
+    "kategori": "family",
+    "payment_method": "qris",
+    "deskripsi": "",
+    "date": "2026-06-23",
+    "time": "17:00:00",
+    "bukti_pembayaran": "bukti_pembayaran/qr-code_tU7LE0s.png",
+    "created_at": "2026-06-23T05:51:40.272Z",
+    "payment_status": "confirmed",
+    "booking_status": "finished",
+    "harga": "50000.00",
+    "drive_link": null
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 40,
+  "fields": {
+    "customer": [
+      "Baskara"
+    ],
+    "nama": "nti",
+    "nomor_hp": "08746776",
+    "package_name": "Photo Session",
+    "kategori": "family",
+    "payment_method": "qris",
+    "deskripsi": "",
+    "date": "2026-06-23",
+    "time": "18:30:00",
+    "bukti_pembayaran": "bukti_pembayaran/qr-code_kX2c7Xe.png",
+    "created_at": "2026-06-23T06:44:48.481Z",
+    "payment_status": "confirmed",
+    "booking_status": "finished",
+    "harga": "120000.00",
+    "drive_link": null
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 41,
+  "fields": {
+    "customer": [
+      "Baskara"
+    ],
+    "nama": "April",
+    "nomor_hp": "06477882",
+    "package_name": "Photo Box",
+    "kategori": "couple",
+    "payment_method": "qris",
+    "deskripsi": "",
+    "date": "2026-06-25",
+    "time": "14:00:00",
+    "bukti_pembayaran": "bukti_pembayaran/qr-code_CMznobc.png",
+    "created_at": "2026-06-25T05:34:12.471Z",
+    "payment_status": "confirmed",
+    "booking_status": "finished",
+    "harga": "25000.00",
+    "drive_link": null
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 42,
+  "fields": {
+    "customer": [
+      "april"
+    ],
+    "nama": "april",
+    "nomor_hp": "0892475364",
+    "package_name": "Self Photo",
+    "kategori": "couple",
+    "payment_method": "qris",
+    "deskripsi": "",
+    "date": "2026-06-26",
+    "time": "13:30:00",
+    "bukti_pembayaran": "bukti_pembayaran/qr-code_inljjw7.png",
+    "created_at": "2026-06-25T06:55:12.931Z",
+    "payment_status": "confirmed",
+    "booking_status": "finished",
+    "harga": "20000.00",
+    "drive_link": null
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 43,
+  "fields": {
+    "customer": [
+      "Irgiluffy"
+    ],
+    "nama": "Monkey D luffy",
+    "nomor_hp": "0877646667373",
+    "package_name": "Photo Box",
+    "kategori": "family",
+    "payment_method": "qris",
+    "deskripsi": "",
+    "date": "2026-06-27",
+    "time": "16:00:00",
+    "bukti_pembayaran": "bukti_pembayaran/qr-code_ElS8g7d.png",
+    "created_at": "2026-06-27T04:44:39.264Z",
+    "payment_status": "confirmed",
+    "booking_status": "finished",
+    "harga": "50000.00",
+    "drive_link": null
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 44,
+  "fields": {
+    "customer": [
+      "Irgiluffy"
+    ],
+    "nama": "Luffy",
+    "nomor_hp": "0865555",
+    "package_name": "Photo Session",
+    "kategori": "family",
+    "payment_method": "qris",
+    "deskripsi": "",
+    "date": "2026-06-28",
+    "time": "13:00:00",
+    "bukti_pembayaran": "bukti_pembayaran/qr-code_5xgaeCG.png",
+    "created_at": "2026-06-27T14:56:25.356Z",
+    "payment_status": "confirmed",
+    "booking_status": "finished",
+    "harga": "120000.00",
+    "drive_link": "https://drive.google.com/drive/folders/1Tfslc3yckTyEX0P-Dzeu6TJxoVh8vbyp?usp=drive_link"
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 45,
+  "fields": {
+    "customer": [
+      "Baskara"
+    ],
+    "nama": "Madu",
+    "nomor_hp": "08664733333",
+    "package_name": "Photo Session",
+    "kategori": "family",
+    "payment_method": "qris",
+    "deskripsi": "",
+    "date": "2026-06-28",
+    "time": "20:00:00",
+    "bukti_pembayaran": "bukti_pembayaran/qr-code_ePWPG6r.png",
+    "created_at": "2026-06-28T12:17:43.688Z",
+    "payment_status": "confirmed",
+    "booking_status": "finished",
+    "harga": "120000.00",
+    "drive_link": null
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 46,
+  "fields": {
+    "customer": [
+      "Baskara"
+    ],
+    "nama": "babas",
+    "nomor_hp": "05555",
+    "package_name": "Photo Box",
+    "kategori": "family",
+    "payment_method": "qris",
+    "deskripsi": "",
+    "date": "2026-06-29",
+    "time": "17:00:00",
+    "bukti_pembayaran": "bukti_pembayaran/qr-code_MIhr3mN.png",
+    "created_at": "2026-06-29T09:46:25.321Z",
+    "payment_status": "confirmed",
+    "booking_status": "finished",
+    "harga": "50000.00",
+    "drive_link": "https://drive.google.com/drive/folders/1Tfslc3yckTyEX0P-Dzeu6TJxoVh8vbyp?usp=drive_link"
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 47,
+  "fields": {
+    "customer": [
+      "admin"
+    ],
+    "nama": "Jeje",
+    "nomor_hp": "07444444",
+    "package_name": "Self Photo",
+    "kategori": "couple",
+    "payment_method": "qris",
+    "deskripsi": "aku mau bg pink",
+    "date": "2026-06-29",
+    "time": "19:00:00",
+    "bukti_pembayaran": "bukti_pembayaran/qr-code_4E4gWF2.png",
+    "created_at": "2026-06-29T10:17:24.726Z",
+    "payment_status": "confirmed",
+    "booking_status": "finished",
+    "harga": "20000.00",
+    "drive_link": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-05-28T06:37:41.894Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "user"
+    ],
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-06-02T15:07:03.522Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "4",
+    "object_repr": "Booking object (4)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.402Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "24",
+    "object_repr": "Basbas",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.402Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "23",
+    "object_repr": "jesika",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.402Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "22",
+    "object_repr": "IPING",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.402Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "21",
+    "object_repr": "jono",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.402Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "20",
+    "object_repr": "prili",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.402Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "19",
+    "object_repr": "Ajoy",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.402Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "18",
+    "object_repr": "Amoy",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.402Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "17",
+    "object_repr": "Amoy",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.402Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "16",
+    "object_repr": "iqball R",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.402Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "15",
+    "object_repr": "iqball R",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.402Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "14",
+    "object_repr": "dilan",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.402Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "13",
+    "object_repr": "Tantri IMUP",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.402Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "12",
+    "object_repr": "Tantri Handayani ",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.402Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "11",
+    "object_repr": "Tantri Cantip",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.403Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "10",
+    "object_repr": "Tantri Handayani",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.403Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "9",
+    "object_repr": "Tantri",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.403Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "8",
+    "object_repr": "Tantri Can",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.403Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "7",
+    "object_repr": "Tantri Imut",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.403Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "6",
+    "object_repr": "Tantri",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.403Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "5",
+    "object_repr": "Tantri",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.403Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "3",
+    "object_repr": "TAN HAN",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.403Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "2",
+    "object_repr": "TAN",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2026-06-08T15:14:41.403Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "1",
+    "object_repr": "TAN",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2026-06-26T14:26:14.710Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "31",
+    "object_repr": "Tantri Cantip - Photo Box",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2026-06-26T14:26:14.710Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "30",
+    "object_repr": "Tantri Cantip - Photo Session",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2026-06-26T14:26:14.710Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "29",
+    "object_repr": "Tantri Cantip - Photo Session",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2026-06-26T14:26:14.710Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "28",
+    "object_repr": "Tantri Cantip - Theater Studio",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2026-06-26T14:26:14.710Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "27",
+    "object_repr": "Aloy",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2026-06-26T14:26:14.710Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "26",
+    "object_repr": "Berlin",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2026-06-26T14:26:14.710Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "booking",
+      "booking"
+    ],
+    "object_id": "25",
+    "object_repr": "baskaput",
+    "action_flag": 3,
+    "change_message": ""
+  }
+}
+]
