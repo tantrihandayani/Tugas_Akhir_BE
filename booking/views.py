@@ -556,58 +556,66 @@ def laporan_pendapatan(request):
 
     for i in range(len(chart)):
 
-        valid = [
-            chart[j]["pendapatan"]
-            for j in range(max(0, i - 2), i + 1)
-            if chart[j]["pendapatan"] > 0
+        if i < 2:
+            chart[i]["movingAverage"] = None
+            continue
+
+        data = [
+            chart[i - 2]["pendapatan"],
+            chart[i - 1]["pendapatan"],
+            chart[i]["pendapatan"],
         ]
 
-        chart[i]["movingAverage"] = (
-            round(sum(valid) / len(valid))
-            if valid
-            else 0
-        )
+        if 0 in data:
+            chart[i]["movingAverage"] = None
+        else:
+            chart[i]["movingAverage"] = round(
+                sum(data) / 3
+            )
 
     # ===========================
     # PREDIKSI BULAN BERIKUTNYA
     # ===========================
 
-    bulan_aktif = [x for x in nilai if x > 0]
+    bulan_aktif = [
+        x for x in nilai
+        if x > 0
+    ]
 
-    prediksi = 0
+    prediksi = None
 
     if len(bulan_aktif) >= 3:
-        prediksi = round(sum(bulan_aktif[-3:]) / 3)
 
-    elif len(bulan_aktif) > 0:
-        prediksi = round(sum(bulan_aktif) / len(bulan_aktif))
+        prediksi = round(
+            sum(
+                bulan_aktif[-3:]
+            ) / 3
+        )
 
     # ===========================
     # TREND
     # ===========================
 
-    trend = "belum tersedia"
-    persentase = 0
+    trend = None
+    persentase = None
 
-    if len(bulan_aktif) >= 2:
+    if prediksi is not None:
 
         terakhir = bulan_aktif[-1]
 
-        if terakhir > 0:
+        persentase = round(
+            ((prediksi - terakhir) / terakhir) * 100,
+            2,
+        )
 
-            persentase = round(
-                ((prediksi - terakhir) / terakhir) * 100,
-                2,
-            )
+        if prediksi > terakhir:
+            trend = "naik"
 
-            if prediksi > terakhir:
-                trend = "naik"
+        elif prediksi < terakhir:
+            trend = "turun"
 
-            elif prediksi < terakhir:
-                trend = "turun"
-
-            else:
-                trend = "stabil"
+        else:
+            trend = "stabil"
 
     # ===========================
     # BULAN TERTINGGI
@@ -661,24 +669,28 @@ def laporan_pendapatan(request):
 
         terakhir = max(bulan_data)
 
-        if terakhir.month == 12:
+        bulan_selanjutnya = terakhir.month + 1
+        tahun_prediksi = terakhir.year
 
-            bulan_prediksi = f"Januari {terakhir.year + 1}"
+        if bulan_selanjutnya > 12:
+            bulan_selanjutnya = 1
+            tahun_prediksi += 1
 
-        else:
-
-            bulan_prediksi = f"{nama_bulan[terakhir.month]} {terakhir.year}"
+        bulan_prediksi = (
+            f"{nama_bulan[bulan_selanjutnya - 1]} {tahun_prediksi}"
+        )
     
     # ===========================
     # INSIGHT
     # ===========================
 
     insight = (
-        "Data historis belum mencukupi untuk analisis tren. "
-        "Sistem membutuhkan minimal dua bulan data pendapatan untuk menghasilkan insight."
+        "Data historis belum mencukupi untuk melakukan prediksi "
+        "menggunakan metode Moving Average 3 Periode. "
+        "Sistem membutuhkan minimal tiga bulan data pendapatan."
     )
 
-    if len(bulan_aktif) >= 2:
+    if len(bulan_aktif) >= 3:
 
         if persentase > 10:
 
