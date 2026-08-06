@@ -3,11 +3,14 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include, re_path
 
-from booking.views import media_file
+# from booking.views import media_file
 from django.http import HttpResponse
 
 def tes(request):
     return HttpResponse("MEDIA OK")
+
+def media_file(request, path):
+    return HttpResponse(f"Path = {path}")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
