@@ -21,6 +21,10 @@ from django.conf import settings
 def media_file(request, path):
     file_path = os.path.join(settings.MEDIA_ROOT, path)
 
+    print("MEDIA_ROOT :", settings.MEDIA_ROOT)
+    print("FILE PATH  :", file_path)
+    print("EXISTS     :", os.path.exists(file_path))
+
     if not os.path.exists(file_path):
         raise Http404("File tidak ditemukan")
 
