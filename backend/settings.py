@@ -109,6 +109,16 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #         default=os.getenv("DATABASE_URL")
 #     )
 # }
+
+
+import os
+
+print("MYSQLHOST =", os.getenv("MYSQLHOST"))
+print("MYSQLDATABASE =", os.getenv("MYSQLDATABASE"))
+print("MYSQLUSER =", os.getenv("MYSQLUSER"))
+print("MYSQLPORT =", os.getenv("MYSQLPORT"))
+
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",

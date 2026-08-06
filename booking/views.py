@@ -13,6 +13,18 @@ from collections import defaultdict, Counter
 import calendar
 from datetime import datetime 
 from .serializers import ChangePasswordSerializer
+import os
+
+from django.http import FileResponse, Http404
+from django.conf import settings
+
+def media_file(request, path):
+    file_path = os.path.join(settings.MEDIA_ROOT, path)
+
+    if not os.path.exists(file_path):
+        raise Http404("File tidak ditemukan")
+
+    return FileResponse(open(file_path, "rb"))
 
 
 
