@@ -4,10 +4,16 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 
 from booking.views import media_file
+from django.http import HttpResponse
+
+def tes(request):
+    return HttpResponse("MEDIA OK")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('booking.urls')),
+    
+    path("media-test/", tes),
     
     re_path(r"^media/(?P<path>.*)$", media_file),
 
