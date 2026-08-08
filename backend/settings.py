@@ -53,7 +53,9 @@ INSTALLED_APPS = [
 
     'corsheaders',
     'rest_framework',
+    'cloudinary',
     'booking',
+    
 ]
 
 MIDDLEWARE = [
@@ -110,6 +112,19 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #     )
 # }
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": "studiofoto",
+#         "USER": "root",
+#         "PASSWORD": "root123",
+#         "HOST": "127.0.0.1",
+#         "PORT": "3306",
+#         "OPTIONS": {
+#             "charset": "utf8mb4",
+#         },
+#     }
+# }
 
 import os
 
@@ -172,6 +187,14 @@ STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+import cloudinary
+
+cloudinary.config(
+    cloud_name=os.getenv("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.getenv("CLOUDINARY_API_KEY"),
+    api_secret=os.getenv("CLOUDINARY_API_SECRET"),
+)
 
 AUTH_USER_MODEL = 'booking.User'
 REST_FRAMEWORK = {

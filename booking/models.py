@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 
 class User(AbstractUser):
@@ -48,11 +49,12 @@ class MenuLayanan(models.Model):
     )
     
     duration = models.CharField(max_length=50, blank=True, null=True)
-    image = models.ImageField(
-        upload_to='layanan/',
+    image = CloudinaryField(
+        'image',
+        folder='layanan',
         blank=True,
         null=True
-        )
+    )
     status = models.BooleanField(default=True)
 
     def __str__(self):
