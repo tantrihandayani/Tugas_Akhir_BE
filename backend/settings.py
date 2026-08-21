@@ -112,19 +112,19 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #     )
 # }
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.mysql",
-#         "NAME": "studiofoto",
-#         "USER": "root",
-#         "PASSWORD": "root123",
-#         "HOST": "127.0.0.1",
-#         "PORT": "3306",
-#         "OPTIONS": {
-#             "charset": "utf8mb4",
-#         },
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "studiofoto",
+        "USER": "root",
+        "PASSWORD": "root123",
+        "HOST": "127.0.0.1",
+        "PORT": "3306",
+        "OPTIONS": {
+            "charset": "utf8mb4",
+        },
+    }
+}
 
 import os
 
@@ -134,16 +134,7 @@ print("MYSQLUSER =", os.getenv("MYSQLUSER"))
 print("MYSQLPORT =", os.getenv("MYSQLPORT"))
 
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": os.getenv("MYSQLDATABASE"),
-        "USER": os.getenv("MYSQLUSER"),
-        "PASSWORD": os.getenv("MYSQLPASSWORD"),
-        "HOST": os.getenv("MYSQLHOST"),
-        "PORT": os.getenv("MYSQLPORT"),
-    }
-}
+
 
 
 # Password validation

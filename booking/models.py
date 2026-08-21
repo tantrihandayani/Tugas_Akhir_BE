@@ -87,6 +87,14 @@ class Booking(models.Model):
         null=True,
         blank=True
     )
+    
+    layanan = models.ForeignKey(
+        MenuLayanan,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='bookings'
+    )
 
     nama = models.CharField(
         max_length=100,

@@ -286,14 +286,15 @@ def get_booking(request, id=None):
 
     # AMBIL DATA
     if request.method == 'GET':
-        bookings = Booking.objects.filter(
-            payment_status="confirmed"
+        bookings = Booking.objects.exclude(
+            payment_status="rejected"
         ).order_by("date", "time")
         result = []
         for item in bookings:
             result.append({
                 "id": item.id,
                 "customer_id": item.customer.id if item.customer else None,
+                "layanan": item.layanan.id if item.layanan else None,
                 "nama": item.nama,
                 "nomor_hp": item.nomor_hp,
                 "package_name": item.package_name,
@@ -319,10 +320,20 @@ def get_booking(request, id=None):
         if serializer.is_valid():
             tanggal = request.data.get("date")
             jam = request.data.get("time")
+            layanan_id = request.data.get("layanan")
+
+            if not layanan_id:
+                return Response(
+                    {
+                        "message": "Studio/kategori layanan wajib dipilih."
+                    },
+                    status=400
+                )
 
             sudah_ada = Booking.objects.exclude(
                 payment_status='rejected'
             ).filter(
+                layanan_id=layanan_id,
                 date=tanggal,
                 time=jam
             ).exists()
@@ -330,8 +341,7 @@ def get_booking(request, id=None):
             if sudah_ada:
                 return Response(
                     {
-                        "message":
-                        "Jam tersebut sudah dibooking."
+                        "message": "Jam tersebut sudah dibooking untuk studio ini."
                     },
                     status=400
                 )
@@ -344,9 +354,17 @@ def get_booking(request, id=None):
                 "kategori"
             )
 
-            layanan = MenuLayanan.objects.filter(
-                title=package_name
-            ).first()
+            try:
+                layanan = MenuLayanan.objects.get(
+                    id=layanan_id
+                )
+            except MenuLayanan.DoesNotExist:
+                return Response(
+                    {
+                        "message": "Studio/kategori layanan tidak ditemukan."
+                    },
+                    status=400
+                )
 
             harga = get_harga_layanan(
                 layanan,
@@ -359,6 +377,7 @@ def get_booking(request, id=None):
             extra_data = {
                 "harga": harga,
                 "customer": customer,
+                "layanan": layanan,
             }
 
             # Booking manual oleh admin
@@ -878,6 +897,7 @@ def transaksi_list(request):
                 if item.customer
                 else None,
             "nama": item.nama,
+            "layanan": item.layanan.id if item.layanan else None,
             "nomor_hp": item.nomor_hp,
             "package_name": item.package_name,
             "kategori": item.kategori,  

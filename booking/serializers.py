@@ -77,21 +77,30 @@ class ChangePasswordSerializer(serializers.Serializer):
         return attrs
 
 class BookingSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Booking
         fields = "__all__"
 
     def create(self, validated_data):
 
+        layanan = validated_data.get("layanan")
+
         package_name = validated_data.get("package_name")
         kategori = validated_data.get("kategori", "").lower()
 
-        try:
-            layanan = MenuLayanan.objects.get(title=package_name)
+        # Jika layanan tidak dikirim,
+        # cari berdasarkan package_name sebagai fallback
+        if layanan is None and package_name:
+            layanan = MenuLayanan.objects.filter(
+                title=package_name
+            ).first()
 
-            harga = 0
+            if layanan:
+                validated_data["layanan"] = layanan
 
+        harga = 0
+
+        if layanan:
             if kategori == "self":
                 harga = layanan.price_self
 
@@ -104,10 +113,7 @@ class BookingSerializer(serializers.ModelSerializer):
             elif kategori == "family":
                 harga = layanan.price_family
 
-            validated_data["harga"] = harga
-
-        except MenuLayanan.DoesNotExist:
-            validated_data["harga"] = 0
+        validated_data["harga"] = harga
 
         # Booking manual oleh admin
         if validated_data.get("customer") is None:
