@@ -112,14 +112,29 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #     )
 # }
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": "studiofoto",
+#         "USER": "root",
+#         "PASSWORD": "root123",
+#         "HOST": "127.0.0.1",
+#         "PORT": "3306",
+#         "OPTIONS": {
+#             "charset": "utf8mb4",
+#         },
+#     }
+# }
+
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "studiofoto",
-        "USER": "root",
-        "PASSWORD": "root123",
-        "HOST": "127.0.0.1",
-        "PORT": "3306",
+        "NAME": os.getenv("MYSQLDATABASE", "studiofoto"),
+        "USER": os.getenv("MYSQLUSER", "root"),
+        "PASSWORD": os.getenv("MYSQLPASSWORD", "sAnzNyEpEkPnasmIfUhHJTlnbsQAcXVq"),
+        "HOST": os.getenv("MYSQLHOST", "127.0.0.1"),
+        "PORT": os.getenv("MYSQLPORT", "3306"),
         "OPTIONS": {
             "charset": "utf8mb4",
         },
