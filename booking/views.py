@@ -591,28 +591,82 @@ def laporan_pendapatan(request):
 
     prediksi = None
     bulan_terakhir_index = None
+    bulan_terakhir_tanggal = None
 
-    # Mencari bulan terakhir yang memiliki pendapatan
-    for i in range(len(nilai) - 1, -1, -1):
-        if nilai[i] > 0:
-            bulan_terakhir_index = i
+    # Tahun yang digunakan untuk menentukan periode prediksi
+    tahun_prediksi_dasar = tahun
+
+    # Mengambil seluruh booking finished agar dapat mengambil
+    # data 12 bulan sebelum bulan prediksi, termasuk data tahun sebelumnya
+    semua_bookings = Booking.objects.filter(
+        booking_status="finished"
+    )
+
+    # Menentukan bulan terakhir yang memiliki pendapatan
+    # pada tahun yang sedang digunakan
+    pendapatan_tahun = defaultdict(float)
+
+    for item in semua_bookings:
+        if item.date.year == tahun_prediksi_dasar:
+            pendapatan_tahun[item.date.month] += float(item.harga)
+
+    for bulan in range(12, 0, -1):
+        if pendapatan_tahun.get(bulan, 0) > 0:
+            bulan_terakhir_tanggal = datetime(
+                tahun_prediksi_dasar,
+                bulan,
+                1
+            )
+            bulan_terakhir_index = bulan - 1
             break
 
-    if bulan_terakhir_index is not None:
+    # Jika terdapat data pendapatan
+    if bulan_terakhir_tanggal is not None:
 
-        # Mengambil 12 bulan dalam satu periode
-        data_12_bulan = nilai[
-            max(0, bulan_terakhir_index - 11):
-            bulan_terakhir_index + 1
-        ]
+        # Menyusun 12 bulan sebelum bulan prediksi.
+        # Contoh:
+        # September 2025 - Agustus 2026
+        periode_12_bulan = []
 
-        # Jika data belum mencapai 12 bulan,
-        # bulan tanpa pendapatan dianggap 0
-        if len(data_12_bulan) < 12:
-            data_12_bulan = (
-                [0] * (12 - len(data_12_bulan))
-                + data_12_bulan
+        tahun_periode = bulan_terakhir_tanggal.year
+        bulan_periode = bulan_terakhir_tanggal.month
+
+        for _ in range(12):
+
+            periode_12_bulan.append(
+                (
+                    tahun_periode,
+                    bulan_periode
+                )
             )
+
+            # Mundur satu bulan
+            bulan_periode -= 1
+
+            if bulan_periode == 0:
+                bulan_periode = 12
+                tahun_periode -= 1
+
+        # Balik agar urut dari bulan paling lama
+        # sampai bulan terakhir
+        periode_12_bulan.reverse()
+
+        # Menghitung pendapatan setiap bulan.
+        # Jika tidak ada transaksi, nilainya dianggap 0.
+        data_12_bulan = []
+
+        for tahun_bulan, bulan_bulan in periode_12_bulan:
+
+            total_bulan = 0
+
+            for item in semua_bookings:
+                if (
+                    item.date.year == tahun_bulan
+                    and item.date.month == bulan_bulan
+                ):
+                    total_bulan += float(item.harga)
+
+            data_12_bulan.append(total_bulan)
 
         # Single Moving Average 12 periode
         prediksi = round(
@@ -621,7 +675,8 @@ def laporan_pendapatan(request):
 
         # Nilai MA ditampilkan pada bulan terakhir
         # sebagai dasar prediksi bulan berikutnya
-        chart[bulan_terakhir_index]["movingAverage"] = prediksi
+        if 0 <= bulan_terakhir_index < len(chart):
+            chart[bulan_terakhir_index]["movingAverage"] = prediksi
 
     # ===========================
     # TREND
@@ -694,24 +749,18 @@ def laporan_pendapatan(request):
 
     bulan_prediksi = "-"
 
-    bulan_data = [
-        datetime.strptime(key, "%Y-%m")
-        for key in pendapatan_bulanan.keys()
-    ]
+    if bulan_terakhir_tanggal is not None:
 
-    if bulan_data:
-
-        terakhir = max(bulan_data)
-
-        bulan_selanjutnya = terakhir.month + 1
-        tahun_prediksi = terakhir.year
+        bulan_selanjutnya = bulan_terakhir_tanggal.month + 1
+        tahun_selanjutnya = bulan_terakhir_tanggal.year
 
         if bulan_selanjutnya > 12:
             bulan_selanjutnya = 1
-            tahun_prediksi += 1
+            tahun_selanjutnya += 1
 
         bulan_prediksi = (
-            f"{nama_bulan[bulan_selanjutnya - 1]} {tahun_prediksi}"
+            f"{nama_bulan[bulan_selanjutnya - 1]} "
+            f"{tahun_selanjutnya}"
         )
     
     # ===========================
