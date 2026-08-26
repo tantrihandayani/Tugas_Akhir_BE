@@ -586,46 +586,42 @@ def laporan_pendapatan(request):
             nilai.append(pendapatan)
 
     # ===========================
-    # MOVING AVERAGE (3 PERIODE)
+    # MOVING AVERAGE (12 PERIODE)
     # ===========================
-
-    for i in range(len(chart)):
-
-        if i < 2:
-            chart[i]["movingAverage"] = None
-            continue
-
-        data = [
-            chart[i - 2]["pendapatan"],
-            chart[i - 1]["pendapatan"],
-            chart[i]["pendapatan"],
-        ]
-
-        if 0 in data:
-            chart[i]["movingAverage"] = None
-        else:
-            chart[i]["movingAverage"] = round(
-                sum(data) / 3
-            )
-
-    # ===========================
-    # PREDIKSI BULAN BERIKUTNYA
-    # ===========================
-
-    bulan_aktif = [
-        x for x in nilai
-        if x > 0
-    ]
 
     prediksi = None
+    bulan_terakhir_index = None
 
-    if len(bulan_aktif) >= 3:
+    # Mencari bulan terakhir yang memiliki pendapatan
+    for i in range(len(nilai) - 1, -1, -1):
+        if nilai[i] > 0:
+            bulan_terakhir_index = i
+            break
 
+    if bulan_terakhir_index is not None:
+
+        # Mengambil 12 bulan dalam satu periode
+        data_12_bulan = nilai[
+            max(0, bulan_terakhir_index - 11):
+            bulan_terakhir_index + 1
+        ]
+
+        # Jika data belum mencapai 12 bulan,
+        # bulan tanpa pendapatan dianggap 0
+        if len(data_12_bulan) < 12:
+            data_12_bulan = (
+                [0] * (12 - len(data_12_bulan))
+                + data_12_bulan
+            )
+
+        # Single Moving Average 12 periode
         prediksi = round(
-            sum(
-                bulan_aktif[-3:]
-            ) / 3
+            sum(data_12_bulan) / 12
         )
+
+        # Nilai MA ditampilkan pada bulan terakhir
+        # sebagai dasar prediksi bulan berikutnya
+        chart[bulan_terakhir_index]["movingAverage"] = prediksi
 
     # ===========================
     # TREND
@@ -634,14 +630,17 @@ def laporan_pendapatan(request):
     trend = None
     persentase = None
 
-    if prediksi is not None:
+    if prediksi is not None and bulan_terakhir_index is not None:
 
-        terakhir = bulan_aktif[-1]
+        terakhir = nilai[bulan_terakhir_index]
 
-        persentase = round(
-            ((prediksi - terakhir) / terakhir) * 100,
-            2,
-        )
+        if terakhir > 0:
+            persentase = round(
+                ((prediksi - terakhir) / terakhir) * 100,
+                2,
+            )
+        else:
+            persentase = None
 
         if prediksi > terakhir:
             trend = "naik"
@@ -685,9 +684,9 @@ def laporan_pendapatan(request):
     # ===========================
 
     rata_rata = round(
-        total_pendapatan / len(bulan_aktif),
-        2,
-    ) if bulan_aktif else 0
+        total_pendapatan / 12,
+        2
+    )
 
     # ===========================
     # BULAN PREDIKSI
@@ -720,12 +719,11 @@ def laporan_pendapatan(request):
     # ===========================
 
     insight = (
-        "Data historis belum mencukupi untuk melakukan prediksi "
-        "menggunakan metode Moving Average 3 Periode. "
-        "Sistem membutuhkan minimal tiga bulan data pendapatan."
+        "Prediksi menggunakan metode Single Moving Average "
+        "12 Periode berdasarkan data pendapatan dalam satu periode 12 bulan."
     )
 
-    if len(bulan_aktif) >= 3:
+    if prediksi is not None and persentase is not None:
 
         if persentase > 10:
 
@@ -784,7 +782,7 @@ def laporan_pendapatan(request):
             "bulanPrediksi": bulan_prediksi,
             "trend": trend,
             "persentase": persentase,
-            "metode": "Single Moving Average (3)",
+            "metode": "Single Moving Average (12)",
             "insight": insight,
         }
     })
