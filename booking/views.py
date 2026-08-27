@@ -650,9 +650,10 @@ def laporan_pendapatan(request):
         # Balik agar urut dari bulan paling lama
         # sampai bulan terakhir
         periode_12_bulan.reverse()
+        # ===========================
+        # MENGHITUNG DATA 12 BULAN
+        # ===========================
 
-        # Menghitung pendapatan setiap bulan.
-        # Jika tidak ada transaksi, nilainya dianggap 0.
         data_12_bulan = []
 
         for tahun_bulan, bulan_bulan in periode_12_bulan:
@@ -660,6 +661,7 @@ def laporan_pendapatan(request):
             total_bulan = 0
 
             for item in semua_bookings:
+
                 if (
                     item.date.year == tahun_bulan
                     and item.date.month == bulan_bulan
@@ -667,6 +669,49 @@ def laporan_pendapatan(request):
                     total_bulan += float(item.harga)
 
             data_12_bulan.append(total_bulan)
+
+
+        # ===========================
+        # MENCARI DATA PERTAMA
+        # ===========================
+
+        data_pertama = None
+
+        for nilai_bulan in data_12_bulan:
+
+            if nilai_bulan > 0:
+                data_pertama = nilai_bulan
+                break
+
+
+        # ===========================
+        # MENGISI BULAN SEBELUM
+        # DATA PERTAMA
+        # ===========================
+
+        if data_pertama is not None:
+
+            sudah_menemukan_data = False
+
+            for i in range(len(data_12_bulan)):
+
+                # Jika menemukan data real
+                if data_12_bulan[i] > 0:
+                    sudah_menemukan_data = True
+
+                # Bulan sebelum data pertama
+                elif not sudah_menemukan_data:
+                    data_12_bulan[i] = data_pertama
+
+
+        # ===========================
+        # SINGLE MOVING AVERAGE
+        # 12 PERIODE
+        # ===========================
+
+        prediksi = round(
+            sum(data_12_bulan) / 12
+        )
 
         # Single Moving Average 12 periode
         prediksi = round(
