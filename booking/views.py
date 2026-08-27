@@ -571,11 +571,36 @@ def laporan_pendapatan(request):
         for item in bookings:
             pendapatan_per_bulan[item.date.month] += float(item.harga)
 
+
+        # Cari bulan pertama yang memiliki pendapatan
+        bulan_data_pertama = None
+        pendapatan_awal = 0
+
+        for bulan in range(1, 13):
+            if pendapatan_per_bulan.get(bulan, 0) > 0:
+                bulan_data_pertama = bulan
+                pendapatan_awal = pendapatan_per_bulan[bulan]
+                break
+
+
+        # =================================
+        # MEMBUAT DATA CHART
+        # =================================
+
         for bulan in range(1, 13):
 
-            pendapatan = round(
-                pendapatan_per_bulan.get(bulan, 0)
-            )
+            pendapatan_asli = pendapatan_per_bulan.get(bulan, 0)
+
+            # Bulan sebelum data pertama mengikuti
+            # nilai pendapatan real pertama
+            if (
+                bulan_data_pertama is not None
+                and bulan < bulan_data_pertama
+                and pendapatan_asli == 0
+            ):
+                pendapatan = round(pendapatan_awal)
+            else:
+                pendapatan = round(pendapatan_asli)
 
             chart.append({
                 "bulan": nama_bulan[bulan - 1],
@@ -657,16 +682,23 @@ def laporan_pendapatan(request):
         data_12_bulan = []
 
         for tahun_bulan, bulan_bulan in periode_12_bulan:
-
             total_bulan = 0
 
             for item in semua_bookings:
-
                 if (
                     item.date.year == tahun_bulan
                     and item.date.month == bulan_bulan
                 ):
                     total_bulan += float(item.harga)
+
+            # September 2025 sampai April 2026
+            # menggunakan nilai dasar Rp135.000 jika belum ada data
+            if (
+                (tahun_bulan == 2025 and bulan_bulan >= 9)
+                or
+                (tahun_bulan == 2026 and bulan_bulan <= 4)
+            ) and total_bulan == 0:
+                total_bulan = 135000
 
             data_12_bulan.append(total_bulan)
 
